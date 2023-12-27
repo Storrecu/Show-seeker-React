@@ -3,14 +3,19 @@ import { Routes, Route } from 'react-router-dom';
 import callToApi from '../services/callToApi';
 import Landing from '../Landing';
 import Header from './common/Header';
-import Footer from './common/Footer';
+import AppInfo from './AppInfo';
 import ShowsList from './shows/ShowsList';
+import Footer from './common/Footer';
 import NotFoundPage from './NotFoundPage';
+import SearchShow from './search/SearchShow';
+import FavoritesList from './lists/FavoritesList';
 import '../styles/App.scss';
 
 const App = () => {
   // States
   let [shows, setShows] = useState([]);
+  let [favShows, setFavShows] = useState([]);
+  let [searchedShows, setSearchedShows] = useState([]);
 
   // Effects
   useEffect(() => {
@@ -28,10 +33,23 @@ const App = () => {
 
   return (
     <>
-      <main className="main">
+      <main className="main-section">
         <header>
           <Header />
         </header>
+        <section className="info-section">
+          <AppInfo />
+        </section>
+        <section className="search-section">
+          <SearchShow />
+        </section>
+        <section className="favorites-section">
+          <FavoritesList
+            list={favShows}
+            isFavourite={true}
+            classType={'js-fav'}
+          />
+        </section>
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route

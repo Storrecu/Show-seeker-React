@@ -10,9 +10,7 @@ const ShowsList = ({ list, isFavourite, classType }) => {
 
   return (
     <>
-      <ul className="showsList">
-        <RenderList list={orderedShowList} />
-      </ul>
+      <RenderList list={orderedShowList} />
     </>
   );
 };
