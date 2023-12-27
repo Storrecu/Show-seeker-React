@@ -1,4 +1,4 @@
-import RenderList from '../common/RenderLists';
+import RenderList from '../lists/RenderLists';
 
 const ShowsList = ({ list, isFavourite, classType }) => {
   const orderedShowList = list.sort();
