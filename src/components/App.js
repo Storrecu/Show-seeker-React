@@ -26,10 +26,10 @@ const App = () => {
         console.error('Error en useEffect:', error);
       }
     };
-
     fetchData();
   }, []);
 
+  // función para actualizar el estado de shows que almacena la respuesta de la API en función de la palabra por defecto o de lo que escribe el usuario
   const handleSearchResults = async (searchTerm) => {
     try {
       const result = await callToApi(searchTerm);
