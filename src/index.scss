@@ -2,3 +2,16 @@
   height: 100vh;
   overflow: scroll;
 }
+
+li {
+  position: relative;
+}
+
+.cross {
+  position: absolute;
+  color: red;
+  top: 0%;
+  left: 35%;
+  z-index: 1000;
+  background-color: #fff;
+}

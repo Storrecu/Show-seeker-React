@@ -11,7 +11,12 @@ const ShowsList = ({ list, isFavourite, classType }) => {
   return (
     <>
       <h2>Results:</h2>
-      <RenderList list={orderedShowList} />
+      <RenderList
+        list={orderedShowList}
+        isFavourite={false}
+        classType={'showsList'}
+        classTypeLi={'js-card'}
+      />
     </>
   );
 };

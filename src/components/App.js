@@ -14,7 +14,6 @@ import '../styles/App.scss';
 const App = () => {
   // States
   let [shows, setShows] = useState([]);
-  let [favShows, setFavShows] = useState([]);
 
   // Effects
   useEffect(() => {
@@ -52,11 +51,7 @@ const App = () => {
           <SearchShow onSearchResults={handleSearchResults} />
         </section>
         <section className="favorites-section">
-          <FavoritesList
-            list={favShows}
-            isFavourite={true}
-            classType={'js-fav'}
-          />
+          <FavoritesList list={shows} isFavourite={true} classType={'js-fav'} />
         </section>
         <Routes>
           <Route path="/" element={<Landing />} />
