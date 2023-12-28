@@ -1,4 +1,4 @@
-const callToApi = async (searchTerm = 'love') => {
+const callToApi = async (searchTerm = 'dragon ball') => {
   try {
     const url = `https://api.tvmaze.com/search/shows?q=${searchTerm}`;
     const res = await fetch(url);
