@@ -1,6 +1,7 @@
 import RenderList from '../lists/RenderLists';
 
-const ShowsList = ({ list, isFavourite, classType }) => {
+const ShowsList = ({ list }) => {
+  console.log();
   const orderedShowList = list.sort();
 
   if (orderedShowList.length === 0) {
@@ -14,8 +15,7 @@ const ShowsList = ({ list, isFavourite, classType }) => {
       <RenderList
         list={orderedShowList}
         isFavourite={false}
-        classType={'showsList'}
-        classTypeLi={'js-card'}
+        onClickCard={() => console.log('añadir a favoritos')}
       />
     </>
   );

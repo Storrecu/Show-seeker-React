@@ -51,19 +51,13 @@ const App = () => {
           <SearchShow onSearchResults={handleSearchResults} />
         </section>
         <section className="favorites-section">
-          <FavoritesList list={shows} isFavourite={true} classType={'js-fav'} />
+          {/* <FavoritesList list={shows} isFavourite={true} classType={'js-fav'} /> */}
         </section>
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route
             path="/shows"
-            element={
-              <ShowsList
-                list={shows}
-                isFavourite={false}
-                classType={'js-card'}
-              />
-            }
+            element={<ShowsList list={shows} classType={'js-card'} />}
           />
           <Route path="/notfound" element={<NotFoundPage />} />
         </Routes>

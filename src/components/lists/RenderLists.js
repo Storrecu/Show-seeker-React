@@ -1,21 +1,22 @@
-const RenderList = ({ list, isFavourite, classType, classTypeLi, onClick }) => {
+const RenderList = ({ list, isFavourite, onClickCard, onClickClose }) => {
+  const ulClass = isFavourite ? 'favList' : 'showsList';
+  const liClass = isFavourite ? 'js-fav' : 'js-card';
   //evento para hacer click en el LI
-  const handleClickCard = (ev) => {
-    ev.preventDefault();
-    // onClick(ev);
+  const handleClickCard = (item) => {
+    onClickCard(item);
     console.log('se ha hecho click en el <li>');
   };
 
   //evento para hacer click en la X
-  const handleClickCross = (ev) => {
-    // onClick(ev);
+  const handleClickCross = (item) => {
+    onClickClose(item);
     console.log('se ha hecho click en la X');
   };
 
   return (
-    <ul className={classType}>
+    <ul className={ulClass}>
       {list.map((item) => (
-        <li key={item.id} className={classTypeLi} onClick={handleClickCard}>
+        <li key={item.id} className={liClass} onClick={handleClickCard}>
           <img className="img" src={item.image} alt={item.name} />
           <h4 className="title">{item.name}</h4>
           {isFavourite ? (
