@@ -2,6 +2,7 @@ const SearchShow = () => {
   return (
     <>
       <div className="search">
+        <h2>Search area:</h2>
         <form className="search-form">
           <input
             className="search-form-input"
