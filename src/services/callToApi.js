@@ -1,6 +1,6 @@
-const callToApi = async () => {
+const callToApi = async (searchTerm = 'love') => {
   try {
-    const url = 'https://api.tvmaze.com/search/shows?q=love';
+    const url = `https://api.tvmaze.com/search/shows?q=${searchTerm}`;
     const res = await fetch(url);
     if (!res.ok) {
       throw new Error(`Error calling API: ${res.statusText}`);

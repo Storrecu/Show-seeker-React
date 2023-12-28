@@ -15,7 +15,6 @@ const App = () => {
   // States
   let [shows, setShows] = useState([]);
   let [favShows, setFavShows] = useState([]);
-  let [searchedShows, setSearchedShows] = useState([]);
 
   // Effects
   useEffect(() => {
@@ -31,6 +30,15 @@ const App = () => {
     fetchData();
   }, []);
 
+  const handleSearchResults = async (searchTerm) => {
+    try {
+      const result = await callToApi(searchTerm);
+      setShows(result);
+    } catch (error) {
+      console.error('Error en la búsqueda:', error);
+    }
+  };
+
   return (
     <>
       <main className="main-section">
@@ -41,7 +49,7 @@ const App = () => {
           <AppInfo />
         </section>
         <section className="search-section">
-          <SearchShow />
+          <SearchShow onSearchResults={handleSearchResults} />
         </section>
         <section className="favorites-section">
           <FavoritesList
