@@ -11,7 +11,7 @@ const FavoritesList = ({ list, isFavourite, classType }) => {
     const indexFav = favShows.findIndex((item) => item.id === foundShow.id);
 
     if (indexFav === -1) {
-      setFavShows([...favShows, foundShow]);
+      setFavShows(favShows.push(foundShow));
     } else {
       setFavShows(favShows.splice(indexFav, 1));
     }

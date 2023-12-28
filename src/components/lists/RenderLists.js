@@ -8,7 +8,8 @@ const RenderList = ({ list, isFavourite, classType, classTypeLi, onClick }) => {
 
   //evento para hacer click en la X
   const handleClickCross = (ev) => {
-    onClick(ev);
+    // onClick(ev);
+    console.log('se ha hecho click en la X');
   };
 
   return (
