@@ -1,8 +1,7 @@
 const RenderList = ({ list, isFavourite, onClickCard, onClickClose }) => {
   const ulClass = isFavourite ? 'favList' : 'showsList';
   const liClass = isFavourite ? 'js-fav' : 'js-card';
-  console.log('isFavourite', isFavourite);
-  console.log('lista', list);
+
   //evento para hacer click en el LI
   const handleClickCard = (item) => {
     console.log('item', item);
