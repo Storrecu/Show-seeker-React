@@ -21,7 +21,6 @@ const RenderList = ({ list, isFavourite, onClickCard, onClickClose }) => {
         <li
           key={item.id}
           className={liClass}
-          // onClick={() => handleClickCard(item)}
           onClick={() => handleClickCard(item)}
         >
           <img className="img" src={item.image} alt={item.name} />

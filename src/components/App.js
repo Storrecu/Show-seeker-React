@@ -53,11 +53,7 @@ const App = () => {
           <SearchShow onSearchResults={handleSearchResults} />
         </section>
         <section className="favorites-section">
-          <FavoritesList
-            list={favShows}
-            isFavourite={true}
-            setFavShows={setFavShows}
-          />
+          <FavoritesList list={favShows} setList={setFavShows} />
         </section>
         <Routes>
           <Route path="/" element={<Landing />} />
