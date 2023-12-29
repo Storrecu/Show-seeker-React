@@ -14,8 +14,10 @@ import '../styles/App.scss';
 const App = () => {
   // States
   let [shows, setShows] = useState([]);
+  let [favShows, setFavShows] = useState([]);
 
   // Effects
+  //llamada a la API para mostrar una búsqueda por defecto al cargar la página
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -51,13 +53,23 @@ const App = () => {
           <SearchShow onSearchResults={handleSearchResults} />
         </section>
         <section className="favorites-section">
-          {/* <FavoritesList list={shows} isFavourite={true} classType={'js-fav'} /> */}
+          <FavoritesList
+            list={favShows}
+            isFavourite={true}
+            setFavShows={setFavShows}
+          />
         </section>
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route
             path="/shows"
-            element={<ShowsList list={shows} classType={'js-card'} />}
+            element={
+              <ShowsList
+                list={shows}
+                favShows={favShows}
+                setFavShows={setFavShows}
+              />
+            }
           />
           <Route path="/notfound" element={<NotFoundPage />} />
         </Routes>
